@@ -7,8 +7,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Assignment01" />
-        <module name="webmagic-core" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="webmagic-core" target="1.8" />
+      <module name="webmagic-parent" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

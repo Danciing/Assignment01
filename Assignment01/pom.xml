@@ -12,7 +12,7 @@
         <dependency>
             <groupId>us.codecraft</groupId>
             <artifactId>webmagic-core</artifactId>
-            <version>0.7.6-SNAPSHOT</version>
+            <version>0.7.5</version>
         </dependency>
     </dependencies>
 
