@@ -1,8 +1,8 @@
 public class FisrtCrawler {
     public static void main(String[] args) {
         //直接调用对应类方法开始爬虫
-        //WhuPageProcessor.run();
+        WhuPageProcessor.run();
         TsuPageProcessor.run();
-        //TjuPageProcessor.run();
+        TjuPageProcessor.run();
     }
 }
