@@ -1,11 +1,10 @@
 import us.codecraft.webmagic.Page;
-import us.codecraft.webmagic.ResultItems;
 import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.Spider;
+import us.codecraft.webmagic.pipeline.JsonFilePipeline;
 import us.codecraft.webmagic.processor.PageProcessor;
 import us.codecraft.webmagic.scheduler.QueueScheduler;
 import us.codecraft.webmagic.scheduler.component.HashSetDuplicateRemover;
-import java.util.Map;
 
 public class TjuPageProcessor implements PageProcessor {
 
@@ -33,6 +32,7 @@ public class TjuPageProcessor implements PageProcessor {
         Spider.create(new TjuPageProcessor())
                 .addUrl("https://see.tongji.edu.cn/szdw/dsmd/axkhf/jsjkxyjsxk.htm")                             //初始网址
                 .setScheduler(new QueueScheduler().setDuplicateRemover(new HashSetDuplicateRemover()))          //查重
+                .addPipeline(new JsonFilePipeline("./result"))                                             //保存
                 .thread(5)                                                                                      //多线程
                 .run();                                                                                         //开始
 

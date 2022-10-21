@@ -1,11 +1,8 @@
 import us.codecraft.webmagic.Page;
-import us.codecraft.webmagic.ResultItems;
 import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.Spider;
+import us.codecraft.webmagic.pipeline.JsonFilePipeline;
 import us.codecraft.webmagic.processor.PageProcessor;
-
-import java.util.Map;
-
 
 public class TsuPageProcessor implements PageProcessor {
 
@@ -29,10 +26,10 @@ public class TsuPageProcessor implements PageProcessor {
     }
 
     public static void run() {
-        //single download
         Spider.create(new TsuPageProcessor())
                 .addUrl("https://www.cs.tsinghua.edu.cn/szzk/jzgml.htm")                              //设置初始网址
                 .thread(5)                                                                            //多线程
+                .addPipeline(new JsonFilePipeline("./result"))                                   //保存
                 .run();                                                                               //开始运行
     }
 }
